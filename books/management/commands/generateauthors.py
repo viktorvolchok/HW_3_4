@@ -15,6 +15,11 @@ class Command(BaseCommand):
         #
         #     Author.objects.create(first_name=first_name, last_name=last_name)
 
+        for _ in range(100):
+            first_name = fake.first_name()
+            last_name = fake.last_name()
+            Author.objects.create(first_name=first_name, last_name=last_name)
+
         for book in Book.objects.all():
             book.authors.add(
                 Author.objects.order_by('?').first()

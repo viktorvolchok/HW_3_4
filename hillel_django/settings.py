@@ -93,10 +93,10 @@ USE_POSTGRES = os.environ.get("USE_POSTGRES") == "True"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ["DB_NAME"],
-        'USER': os.environ["DB_USERNAME"],
-        'PASSWORD': os.environ["DB_PASSWORD"],
-        'HOST': os.environ["DB_HOST"],
+        'NAME': os.environ['django_books'],
+        'USER': os.environ['postgres'],
+        'PASSWORD': os.environ['Dakar8754La'],
+        'HOST': os.environ['localhost'],
         'PORT': '5432',
     } if USE_POSTGRES else {
         'ENGINE': 'django.db.backends.sqlite3',

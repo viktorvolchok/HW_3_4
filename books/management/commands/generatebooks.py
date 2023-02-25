@@ -22,6 +22,8 @@ class Command(BaseCommand):
 
             pages_count = randint(1, 1000)
 
-            book = Book.objects.create(name=book_name, pages_count=pages_count)
+            Book.objects.create(name=book_name, pages_count=pages_count)
             print(book_name, pages_count)
-            print(book.authors_string)
+            price = randint(100, 1000)
+            Book.objects.create(name=book_name, pages_count=pages_count, price=price)
+            print(book_name, pages_count, price)
