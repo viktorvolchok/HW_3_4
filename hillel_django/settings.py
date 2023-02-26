@@ -80,6 +80,7 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
+        'hillel_django.authentication.SecretHeaderAuthentication',
     ]
 }
 
@@ -95,7 +96,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.environ['django_books'],
         'USER': os.environ['postgres'],
-        'PASSWORD': os.environ['Dakar8754La'],
+        'PASSWORD': os.environ[''],
         'HOST': os.environ['localhost'],
         'PORT': '5432',
     } if USE_POSTGRES else {

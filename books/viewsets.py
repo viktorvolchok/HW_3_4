@@ -12,6 +12,13 @@ class BookViewSet(ModelViewSet):
     serializer_class = BookSerializer
     permission_classes = [IsSellerOrAdminOrReadOnly]
 
+    def get_queryset(self):
+        queryset = self.queryset
+
+        if self.action == 'list':
+            queryset = queryset.filter(archived_books=False)
+        return queryset
+
 
 class AuthorViewSet(ModelViewSet):
     queryset = Author.objects.all().annotate(books_count=Count('book'), average_price=Avg('book__price'))
